@@ -1,0 +1,6 @@
+1. Download LLVM source (http://releases.llvm.org/download.html). 
+You can also use the latest version of LLVM through svn (https://clang.llvm.org/get_started.html).
+
+2. Follow the steps given in https://clang.llvm.org/get_started.html.
+
+3. For a faster build, I followed the suggestion provided in https://googleweblight.com/i?u=https://stackoverflow.com/questions/47696773/llvm-6-trunk-build-on-ubuntu-16-04-not-building-lld&hl=en-IN.

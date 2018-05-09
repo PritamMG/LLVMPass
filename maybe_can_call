@@ -1,0 +1,20 @@
+#!/bin/bash
+
+path=/home/pritam/LLVM_BUILDS/llvm-svn/build/bin
+buildpath=/home/pritam/LLVM_BUILDS/llvm-svn/build/lib
+
+if [ $# != 3 ]
+then
+	echo "Insufficient Arguments"
+	exit 1
+fi
+
+basefilename=`echo $1 | cut -d'.' -f1`
+
+llfile=$basefilename.bc
+
+$path/clang -O0 -S -emit-llvm $1 -o $llfile
+
+$path/opt -load $buildpath/LLVMSkeleton.so -skeleton $llfile -caller $2 -callee $3 -o /dev/null
+
+

@@ -1,0 +1,24 @@
+For compiling the LLVM pass
+
+1. Copy the Skeleton directory in <path-to-llvm-src>/lib/Transforms.
+2. Add the below line to <path-to-llvm-src>/lib/Transforms/CMakeLists.txt
+
+	add_subdirectory(Skeleton)
+
+3. cd <path-to-llvm-build>
+4. make
+
+For running the LLVM pass on input program
+
+1. Change the variables path and buildpath in file maybe_can_call as follows:
+
+	path=<path-to-llvm-build>/bin
+	buildpath=<path-to-llvm-build>/lib 
+
+2. chmod 755 maybe_can_call (maybe_can_call is a shell script).
+3. Use the following command
+
+	./maybe_can_call <input-file>.c <caller> <callee>
+
+
+
